@@ -3,6 +3,7 @@
 All labs, problems and projects from both computer science courses I had taken CS50x and CS50web. 
 
 CS50 intro : 3 folders -> labs + problems + final project
+
 CS50 web : 2 folders -> problems + final project
 
 Each of labs, problems and final problems are linked to specification and documentation.
