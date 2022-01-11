@@ -1,6 +1,7 @@
 # CS50
 
-All labs, problems and projects from both CS50x and CS50web. 
+All labs, problems and projects from both computer science courses I had taken CS50x and CS50web. 
+
 CS50 intro : 3 folders -> labs + problems + final project
 CS50 web : 2 folders -> problems + final project
 
