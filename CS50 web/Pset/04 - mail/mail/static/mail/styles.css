@@ -1,0 +1,83 @@
+/* General display */
+body {
+    font-family: arial,sans-serif;
+}
+
+/* Header, user-email and logout*/
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 2.5rem;
+    margin-bottom:4rem;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    
+}
+
+.user-email {
+    position: absolute;
+    left: 0%;
+}
+
+.logout {
+    position: absolute;
+    right: 0%;
+}
+
+/* Navigations buttons */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+#inbox, #compose, #sent, #archived {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/* Form */
+textarea {
+    min-height: 400px;
+    white-space: pre-wrap;
+}
+input {
+    margin: 10px 0px;
+}
+
+/* Emails list displaying */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    transition: 0.1s;
+}
+
+.row:hover {
+    transform: scale(1.005);
+    cursor: pointer;
+}
+
+/* Single mail view style */
+.sender, .to, .subject, .ts {
+    font-weight: bold;    
+}
+
+/* Button archive and reply */
+.arch_and_reply {
+    padding: 10px 5px;
+}
+
+/* Keep line breaks from inital text input */
+.email_text {
+    white-space: pre-wrap;
+}

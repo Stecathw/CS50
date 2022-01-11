@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Advanced Search</title>
+    </head>
+    <body style="margin: 0;">
+        <div>            
+            <div class="advanced_top">
+                <div class="logo_link">
+                    <a href="index.html">
+                        <img alt="Google" height="30" 
+                        src="https://www.google.be/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+                        data-atf="1">
+                    </a>
+                </div>
+            </div>
+            <div class="appbar">
+                <p style="margin-left:10px">Advanced search</p>
+            </div>
+            <div class="separator"></div>
+            <div class="advanced_form_div">
+                <form action="https://google.com/search" method="GET">
+                    <div class="table_cell">
+                        <label style="font-size: 16px;">Find pages with...</label>
+                    </div> 
+                    <br>
+                    <div class="table_cell">
+                        <label class="adv_label">All these words : </label>
+                        <input class="advanced_input" type="text" name="as_q" autocapitalize="off" autocomplete="off" autofocus="off">
+                    </div>                     
+                    <br>
+                    <div class="table_cell">
+                        <label class="adv_label">This exact word or phrase : </label>
+                        <input class="advanced_input" type="text" name="as_epq" autocapitalize="off" autocomplete="off" autofocus="off">
+                    </div> 
+                    <br>
+                    <div class="table_cell">
+                        <label class="adv_label">Any of these words : </label>
+                        <input class="advanced_input" type="text" name="as_oq" autocapitalize="off" autocomplete="off" autofocus="off">
+                    </div>  
+                    <br>
+                    <div class="table_cell">
+                        <label class="adv_label">None of these words : </label>
+                        <input class="advanced_input" type="text" name="as_eq" autocapitalize="off" autocomplete="off" autofocus="off">
+                    </div>                                   
+                    <br>
+                    <div class="table_cell">
+                        <div class="adv_label"></div>
+                        <div class="adv_hidden_div">                            
+                            <input id="adv_button" type="submit" value="Advanced Search">
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <br>
+            <div class="separator"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+sort1 uses: Bubble sort
+
+How do you know?: If n is sorted, bubble sort should do better than other sorting algorithm, refering to Big O and Omega cheat sheet. 
+
+
+sort2 uses: Merge sort
+
+How do you know?: If n is randomly sorted, then merge sort will do better than other sorting algorithm.
+
+
+sort3 uses: Selection sort
+
+How do you know?: If n is sorted, then it will be the worse scenario for this algorithm.
+
+
+
+random50000 : time(sort1) = 14.459 / time(sort2) = 2.651s / time(sort3) = 8.744s
+reversed50000 : time(sort1) = 12.097s / time(sort2) = 4.421s / time(sort3) = 8.994s
+sorted50000 : time(sort1) = 3.948s / time(sort2) = 4.598s / time(sort3) = 7.966s

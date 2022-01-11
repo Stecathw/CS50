@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'styles.css' %}" >
+        <title>{% block title %}Auctions{% endblock %}</title>
+    </head>
+    <body>
+        <nav class="main-navbar navbar navbar-expand-lg bg-black">
+            <div class="container-fluid">
+                <h1 class="navbar-brand"><strong>AUCTIONS</strong></h1>
+                <img class="auction_icon" src="https://svgsilh.com/svg/2632555.svg" alt="auction_icon">
+                <div class="nav nav-login">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <p class="nav-link"> 
+                                Signed in as <strong>{{ user.username }}</strong>.
+                            </p>                            
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <p class="nav-link">
+                                Not signed in.
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>     
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarTogglerSecondary" aria-controls="navbarTogglerSecondary" 
+                aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerSecondary">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+                        </li>
+                        <li class="nav-item_dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="right:auto; left: auto;">
+                                {% for category in categories %}                                
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'category' category %}">{{ category }}</a>
+                                    </li>
+                                {% endfor %}                                
+                            </ul>                            
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">                    
+                                <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+                            </li>
+                            <li class="nav-item">                    
+                                <a class="nav-link" href="{% url 'create_auction' %}">Create Listings</a>
+                            </li>                
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr>
+        <div class="messages">
+            {% if messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                {% endfor %}
+            </div>               
+        {% endif %}
+        </div>
+        {% block body %}
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>  
+        <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>      
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+ 
+    <head>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Sky</title>
+        
+        
+        <script> 
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let correct = document.querySelectorAll(".correct");
+                for (let i = 0; i < correct.length; i++) {
+                    correct[i].addEventListener('click', function() {
+                        correct[i].style.backgroundColor = 'green';
+                        document.querySelector('#feedback1').innerHTML = 'Correct !';
+                    });
+                }
+                
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let j = 0; j < incorrects.length; j++) {                
+                    incorrects[j].addEventListener('click', function() 
+                    {
+                        incorrects[j].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect';
+                    });
+               }
+               })
+               
+        </script>
+        
+        
+    </head>
+    
+    <body>
+        
+        <header> 
+         <nav> 
+          <ol>
+            <li id ="logo"><a href="#">THE SKY</a></li>
+            <li><a href="#clouds">Clouds</a></li>
+            <li><a href="#weather">Weather</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          </ol>
+         </nav>
+         <div id="homeImage">
+             <h1>The Sky</h1>
+             <h3>An invisible fluid...</h3>
+             <div id=""> <a href="#"> </a> </div>
+         </div>
+        </header>
+        
+        <section id="presentation">
+            <div id="textIntro">
+                <h2>Blue, cloudy, previsible... ?</h2>
+                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo.
+                Nullam dapibus fermentum ipsum. Etiam quis quam. 
+                Integer lacinia. Nulla est. Nulla turpis magna, cursus sit amet,
+                suscipit a, interdum id, felis. Integer vulputate sem a nibh 
+                rutrum consequat. Maecenas lorem. Pellentesque pretium lectus 
+                id turpis. Etiam sapien elit, consequat eget, tristique non, 
+                venenatis quis, ante. Fusce wisi. Phasellus faucibus molestie 
+                nisl. Fusce eget urna. Curabitur vitae diam non enim 
+                vestibulum interdum. Nulla quis diam. Ut tempus purus at lorem. Morbi.</p>
+            </div>
+        </section>
+        
+        <section id="clouds">
+            <h2>Some clouds</h2>
+            <div class="grid">
+                <img src="images/Cumulus.jpg"/>
+                <img src="images/Cirrus.jpg"/>
+                <img src="images/lenticularis.jpg"/>
+                <img src="images/Congestus.jpg"/>
+                <img src="images/Nimbostratus.jpg"/>
+                <img src="images/Cumulonimbus.jpg"/>
+            </div>
+        </section>
+        
+        <section id="weather">
+            <div id="textWeather">
+                <h2>Weather</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in 
+                egestas massa. Praesent accumsan diam arcu, et finibus lacus rhoncus 
+                ac. Suspendisse et blandit massa, ac egestas metus. 
+                Donec sed nulla id tortor tempus tempor. Sed fermentum in lorem 
+                id tempor. Cras est enim, placerat eget nunc et, molestie commodo urna. 
+                Quisque congue mollis augue, ut condimentum purus tempus ac. 
+                Sed consequat turpis auctor, feugiat mi in, aliquet lacus. Duis ultrices 
+                euismod turpis quis placerat. Aliquam a aliquam magna. Ut.</p>
+            </div>
+        </section>
+        
+        <section id="quiz">
+            <div id="questions">
+                <h2>Quiz</h2>
+                <h3>Among these clouds, which ones are dangerous when flying a glider ?</h3>
+                <button class="incorrect">Cumulus</button>
+                <button class="correct">Nimbostratus</button>
+                <button class="correct">Congestus</button>
+                <button class="correct">Cumulonimbus</button>
+                <button class="incorrect">Stratus</button>
+                <p id="feedback1"></p>
+            </div>
+        </section>
+        
+    </body>
+    
+    
+</html>
