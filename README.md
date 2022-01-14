@@ -2,8 +2,6 @@
 
 All labs, problems and projects from both computer science courses I had taken CS50x and CS50web. 
 
-Each of labs, problems and final problems are linked to specification and documentation.
-
 I constantly use it for reference when I forgot something... 
 
 ___
